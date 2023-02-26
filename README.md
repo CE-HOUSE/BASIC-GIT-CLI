@@ -77,4 +77,4 @@ git rebase {commit_id}
 
 ######  see you again, promise I will write again when I come back
 ---
-##### ***<div align="right">&diams; Created By BXDMAN &diams;</div>
+##### ***<div align="right">&diams; Created By BXDMAN &diams;</div>***
