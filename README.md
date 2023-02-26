@@ -43,7 +43,7 @@ git push {name of remote} {name of branch}
 git checkout {name of branch}
 ```
 
-##### Switch To After Branch 
+##### Switch To Previous Branch
 ```bash
 git checkout -
 ```
@@ -74,6 +74,12 @@ git log
 git rebase {commit_id}
 ```
 **comit_id** you can find it from **Log**
+
+##### Edit Lasted Commit Message
+```bash
+git commit --amend -m "{some message for team your team about this action}"
+```
+if you want to edit message on another version, use rebase before amend
 
 ######  see you again, promise I will write again when I come back
 ---
