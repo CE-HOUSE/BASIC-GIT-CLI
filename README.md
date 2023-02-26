@@ -4,7 +4,7 @@ The Git CLI that you'll want to understand before working with your team is cont
 
 ##### Concept of GIT
 
-![[Pasted image 20230226210130.png]]
+![concept_of_git](https://www.edureka.co/blog/wp-content/uploads/2016/11/Git-Architechture-Git-Tutorial-Edureka-2.png)
 
 
 ##### Initial git on your workspace
