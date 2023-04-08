@@ -352,6 +352,6 @@ $ vim <conflict file>
 
 $ git mergetool          # using mergetool (GUI tool)
 ```
-##### ***<div align="right">&diams; Created By BXDMAN & REDAXN &diams;</div>***
+##### ***<div align="right">BXDMAN & REDAXN | ISAG</div>***
 
 
