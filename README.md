@@ -1,14 +1,50 @@
 # Git is a version control
 ![](assets/git-diagram.svg)
 
+### [Git is a version control](#git-is-a-version-control)
+
+#### [Basics command for Git](#basics-command-for-git-1)
+* [`git init`](#git-init)
+* [`git add`](#git-add)
+* [`git status`](#git-status)
+* [`git commit`](#git-commit)
+* [`git remote`](#git-remote)
+* [`git push`](#git-push)
+* [`git clone`](#git-clone)
+* [`git pull`](#git-pull)
+* [`.gitignore`](#gitignore)
+* [`git log`](#git-log)
+* [`git diff`](#git-diff)
+* [`git reset`](#git-reset)
+
+#### [Branching](#branching-1)
+
+* [`git branch`](#git-branch)
+* [`git checkout`](#git-checkout)
+* [`git switch`](#git-switch)
+
+#### [Merge vs Rebase](#merge-vs-rebase-1)
+* [`git merge`](#git-merge)
+* [`git rebase`](#git-rebase)
+
+#### [Stashing](#stashing-1)
+* [`git stash`](#git-stash)
+
+#### [Squashing](#squashing-1)
+
+#### [Merge conflict resolve](#merge-conflict-resolve-1)
+
+---
 
 ## Basics command for Git
 
+#### `git init` 
 Initialize Git
 ```bash
 $ git init         # Initiates an empty git repository
 ```
 
+#### `git add`
 Add files to the staging area for commit
 ```bash
 $ git add .  
@@ -21,10 +57,16 @@ $ git add -p README.md
 # -p (--patch) : Choose to add part of changes in file to staging area 
 ```
 
+#### `git status`
+
 Checking stages (Best practice : always checking stages before commit)
 ```bash
 $ git status       # Lists all new or modified files to be committed
+
+$ git status -s    # For shorter output
 ```
+
+#### `git commit`
 
 Commit changes you made to your Git repo (local)
 ```bash
@@ -47,6 +89,8 @@ $ git commit --amend -m "an updated commit message"
 # NOTE: Don’t amend public commits!
 ```
 
+#### `git remote`
+
 Add a remote to your Github Repo
 ```bash
 $ git remote add origin <remote_repository_URL>
@@ -59,6 +103,8 @@ $ git remote -v
 # lists the URLs of the remote connections you have to other repositories
 ```
 
+#### `git push`
+
 Pushes the changes in your local repository to the remote repository (Github)
 ```bash
 $ git push -u origin master 
@@ -66,10 +112,14 @@ $ git push -u origin master
 # -u (--set-upstream) : make you git push default behavior to push changes to origin/main
 ```
 
+#### `git clone`
+
 Cloning a Git Repo
 ```bash
 $ git clone <remote_repository_URL>
 ```
+
+#### `git pull`
 
 Pulling changes from remote repository to your local repository
 ```bash
@@ -81,12 +131,16 @@ $ git pull
 # git pull is combination of git fetch and git merge (git fetch followed by git merge)
 ```
 
+#### `.gitignore`
+
 Ignore files/folders
 ```bash
 $ touch .gitignore
 $ echo "file/folder name" > .gitignore
 # git will ignore all file or folder in .gitignore
 ```
+
+#### `git log`
 
 View commit history
 ```bash
@@ -115,6 +169,8 @@ $ git log --graph --oneline --decorate
 ```
 ![](assets/gitlog-oneline-decorate-graph.png)
 
+#### `git diff`
+
 Show changes between working directory/commit
 ```bash
 $ git diff        # show unstaged changes between your working directory
@@ -125,6 +181,8 @@ $ git diff <file name>
 $ git diff <commit hash>
 # show changes between specific commit and your current working directory
 ```
+
+#### `git reset`
 
 Uncommit Changes you just made to your Git Repo
 ```bash
@@ -144,6 +202,9 @@ $ git reset --hard <commit hash>
 # Remove commit and all change to your certain commit
 ```
 
+## Branching
+
+#### `git branch`
 List all branches
 ```bash
 $ git branch
@@ -151,6 +212,8 @@ $ git branch
 $ git branch -a    
 # -a (--all) : list all branch including remote branch 
 ```
+
+#### `git checkout`
 
 Create branch
 ```bash
@@ -164,6 +227,8 @@ Delete branch
 ```bash
 $ git branch -d <branch name>
 ```
+
+#### `git switch`
 
 Switching between branch
 ```bash
@@ -188,14 +253,16 @@ $ git checkout <commit hash> <file/folder to switch>
 # this will switch all file in working directory to version that commit hash is a1e8fb5 and if you have change and commit, this will continue your commit in your branch 
 ```
 
-### Merge vs Rebase
+## Merge vs Rebase
 
 ![](assets/merge-rebase.png)
 Used for same purpose (intergrating commits)  
-Merge : messy project history (ton of merge commits) but commits history still the same  
-Rebase : cleaner project history (linear project history) but rewritten commits history (different commit hash)
+`Merge` : messy project history (ton of merge commits) but commits history still the same  
+`Rebase` : cleaner project history (linear project history) but rewritten commits history (different commit hash)
 
-**WARNING** : Never rebase commits that have been shared with others. if you already pushed commits up to Github **DO NOT** rebase them unless you are positive no one on the team is using those commits!
+<mark>**WARNING**</mark> : Never rebase commits that have been shared with others. if you already pushed commits up to Github <mark>DO NOT</mark> rebase them unless you are positive no one on the team is using those commits!
+
+#### `git merge`
 
 Merging branch
 ```bash
@@ -208,6 +275,8 @@ $ git merge <branch name>
 #  	 git merge main
 # to update our feature branch up to date with main branch
 ```
+
+#### `git rebase`
 
 Rebasing branch
 ```bash
@@ -235,8 +304,10 @@ commonly used commands:
 - squash - meld into previous commit
 - drop - remove commit
 
-### Stashing
+## Stashing
 stashing uncommited changes so that we can return to them later, without having to make unnecessary commits   
+
+#### `git stash`
 
 git stash is super useful command that helps you save changes that you are not yet ready to commit. You can stash changes and then come back to them later
 ```bash
@@ -309,7 +380,7 @@ $ git stash clear
 ```
 Usually, when we working with stash we only use git stash and git stash pop (normal use)
 
-### Squashing (optional)
+### Squashing
 Combining multiple commits into one (keep git history tidier and easier to read)
 
 Using interactive rebase (have fully control)
