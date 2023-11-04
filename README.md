@@ -217,7 +217,7 @@ $ git branch -a
 
 Create branch
 ```bash
-$ git branch <bracnh name>
+$ git branch <branch name>
 
 # OR create and move to that branch
 $ git checkout -b <branch name>
